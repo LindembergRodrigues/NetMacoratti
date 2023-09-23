@@ -1,12 +1,19 @@
 using Microsoft.EntityFrameworkCore;
 using NetMacoratti.DBContent;
+using NetMacoratti.Repository;
+using NetMacoratti.Repository.Interface;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+//injeção de dependencia
 builder.Services.AddDbContext<AppDBContext>(option => option.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+//intancia a instância do banco de dados 
+
+builder.Services.AddTransient<ILanche, LancheRepository>();
+builder.Services.AddTransient<ICategoria, CategoriaRepository>();
 
 var app = builder.Build();
 
