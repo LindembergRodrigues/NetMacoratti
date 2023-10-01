@@ -2,7 +2,7 @@
 
 namespace NetMacoratti.Repository.Interface
 {
-    public interface ICategoria
+    public interface ICategoriaRepository
     {
         public IEnumerable<Categoria> Categorias { get; }
     }

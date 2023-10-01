@@ -4,7 +4,7 @@ using NetMacoratti.Repository.Interface;
 
 namespace NetMacoratti.Repository
 {
-    public class CategoriaRepository : ICategoria
+    public class CategoriaRepository : ICategoriaRepository
     {
         private AppDBContext _dbContext;
 

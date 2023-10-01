@@ -2,7 +2,7 @@
 
 namespace NetMacoratti.Repository.Interface
 {
-    public interface ILanche
+    public interface ILancheRepository
     {
         IEnumerable<Lanche> Lanches { get; }
         IEnumerable<Lanche> LanchePreferido { get; }

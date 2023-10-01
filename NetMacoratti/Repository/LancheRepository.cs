@@ -5,7 +5,7 @@ using NetMacoratti.Repository.Interface;
 
 namespace NetMacoratti.Repository
 {
-    public class LancheRepository : ILanche
+    public class LancheRepository : ILancheRepository
     {
         private AppDBContext _dbContext;
 
