@@ -1,16 +1,17 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using NetMacoratti.Repository.Interface;
+using NetMacoratti.ViewModels;
 
 namespace NetMacoratti.Controllers
 {
     public class LancheController : Controller
     {
 
-       public readonly ILancheRepository lancheRepository;
+       public readonly ILancheRepository _lancheRepository;
 
         public LancheController(ILancheRepository lancheRepository)
         {
-            this.lancheRepository = lancheRepository;
+            _lancheRepository = lancheRepository;
         }
 
         public IActionResult Index()
@@ -20,8 +21,15 @@ namespace NetMacoratti.Controllers
 
         public IActionResult List()
         {
-            var lanches = lancheRepository.Lanches;
-            return View(lanches);
+            //var lanches = lancheRepository.Lanches;
+            //return View(lanches);
+
+            var lanchesListViewModel = new LancheListViewModel();
+            lanchesListViewModel.lanches = _lancheRepository.Lanches;
+            lanchesListViewModel.categoriaAtual = "categoria atual";
+
+            return View(lanchesListViewModel);
+
         }
 
     }
