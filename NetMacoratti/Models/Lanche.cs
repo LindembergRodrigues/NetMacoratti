@@ -50,3 +50,4 @@ namespace NetMacoratti.Models
         public virtual Categoria Categoria { get; set; }
     }
 }
+ 

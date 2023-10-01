@@ -1,0 +1,21 @@
+﻿@model IEnumerable<NetMacoratti.Models.Lanche>
+
+<div>
+    <h2>
+        Listagem com todos os lanches
+    </h2>
+</div>
+
+@foreach (var lanches in Model)
+{
+    <div>
+        <h4>
+            Lanches: @lanches.Nome
+        </h4>
+        <img src="@lanches.ImagemThumbnailUrl"/>
+        <h3>
+            Preço: @lanches.Preco
+        </h3>
+
+    </div>
+}
