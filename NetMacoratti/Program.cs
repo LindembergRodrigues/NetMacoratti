@@ -15,7 +15,12 @@ builder.Services.AddDbContext<AppDBContext>(option => option.UseSqlServer(builde
 builder.Services.AddTransient<ILancheRepository, LancheRepository>();
 builder.Services.AddTransient<ICategoriaRepository, CategoriaRepository>();
 
+//instancia as config de session
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddSession();
+
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
@@ -31,6 +36,9 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+
+//usar as session
+app.UseSession();
 
 app.MapControllerRoute(
     name: "default",
