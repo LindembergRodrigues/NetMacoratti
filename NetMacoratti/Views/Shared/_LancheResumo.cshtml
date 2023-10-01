@@ -1,0 +1,17 @@
+﻿@model Lanche
+
+<div class="col-sm-4 col-md-4 col-lg-4">
+
+    <div>
+        <img src="@Model.ImagemThumbnailUrl" class="img-fluid" />
+    </div>
+    <h3>
+        Preço: @Model.Preco.ToString("c")
+    </h3>
+    <h4>
+        Lanches: @Model.Nome
+    </h4>
+    <p>
+        @Model.DescricaoCurta
+    </p>
+</div>

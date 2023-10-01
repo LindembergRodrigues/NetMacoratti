@@ -1,21 +1,17 @@
-﻿@model IEnumerable<NetMacoratti.Models.Lanche>
+﻿@model LancheListViewModel
+
 
 <div>
     <h2>
-        Listagem com todos os lanches
+        Categoria Atual
     </h2>
 </div>
 
-@foreach (var lanches in Model)
-{
-    <div>
-        <h4>
-            Lanches: @lanches.Nome
-        </h4>
-        <img src="@lanches.ImagemThumbnailUrl"/>
-        <h3>
-            Preço: @lanches.Preco
-        </h3>
-
+<div class="container">
+    <div class= "row">
+        @foreach (var lanches in Model.lanches)
+        {
+            <partial name="_LancheResumo" for="@lanches" />
+        }
     </div>
-}
+</div>
