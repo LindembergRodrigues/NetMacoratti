@@ -19,6 +19,7 @@ namespace NetMacoratti.Controllers
             return View();
         }
 
+        
         public IActionResult List()
         {
             //var lanches = lancheRepository.Lanches;

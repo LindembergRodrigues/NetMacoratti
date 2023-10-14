@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using NetMacoratti.DBContent;
+using NetMacoratti.Models;
 using NetMacoratti.Repository;
 using NetMacoratti.Repository.Interface;
 
@@ -14,6 +15,8 @@ builder.Services.AddDbContext<AppDBContext>(option => option.UseSqlServer(builde
 
 builder.Services.AddTransient<ILancheRepository, LancheRepository>();
 builder.Services.AddTransient<ICategoriaRepository, CategoriaRepository>();
+builder.Services.AddScoped(Sp => CarrinhoCompra.GetCarrinho(Sp));
+
 
 //instancia as config de session
 builder.Services.AddDistributedMemoryCache();

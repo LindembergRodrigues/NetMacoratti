@@ -1,20 +1,29 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using NetMacoratti.Models;
+using NetMacoratti.Repository.Interface;
+using NetMacoratti.ViewModels;
 using System.Diagnostics;
 
 namespace NetMacoratti.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private readonly ILancheRepository _lancheRepository;
+        public HomeController(ILancheRepository lancheRepository)
         {
-            _logger = logger;
+            _lancheRepository = lancheRepository;
         }
+
+
 
         public IActionResult Index()
         {
+            var HomeViewModel = new HomeViewModel()
+            {
+                lanchesPreferidos = _lancheRepository.LanchePreferido
+            };
+
+
             return View();
         }
 

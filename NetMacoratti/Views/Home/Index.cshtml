@@ -1,6 +1,21 @@
-﻿@{
+﻿@model HomeViewModel
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <partial name="_Carousel"/>
 
+<h2>
+    Os preferidos
+</h2>
+<h4>
+    Tá com fome? tá com fome? pega um sanduíche e come
+</h4>
+
+<div class="row">
+    @foreach (var lanche in Model.lanchesPreferidos)
+    {
+        <partial name="_LancheResumo" for="@lanche">
+    }
+</div>
