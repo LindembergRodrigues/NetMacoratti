@@ -16,7 +16,10 @@ namespace NetMacoratti.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var homeViewModel = new HomeViewModel { 
+                lanchesPreferidos = _lancheRepository.LanchePreferido
+            };
+            return View(homeViewModel);
         }
 
         

@@ -24,7 +24,7 @@ namespace NetMacoratti.Controllers
             };
 
 
-            return View();
+            return View(HomeViewModel);
         }
 
         public IActionResult Privacy()
