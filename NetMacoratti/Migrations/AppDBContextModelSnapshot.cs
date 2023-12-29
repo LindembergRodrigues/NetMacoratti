@@ -43,7 +43,7 @@ namespace NetMacoratti.Migrations
 
                     b.HasIndex("LancheId");
 
-                    b.ToTable("Carrinho");
+                    b.ToTable("Carrinho", (string)null);
                 });
 
             modelBuilder.Entity("NetMacoratti.Models.Categoria", b =>
@@ -66,7 +66,7 @@ namespace NetMacoratti.Migrations
 
                     b.HasKey("CategoriaId");
 
-                    b.ToTable("Categorias");
+                    b.ToTable("Categorias", (string)null);
                 });
 
             modelBuilder.Entity("NetMacoratti.Models.Lanche", b =>
@@ -116,7 +116,7 @@ namespace NetMacoratti.Migrations
 
                     b.HasIndex("CategoriaId");
 
-                    b.ToTable("Lanches");
+                    b.ToTable("Lanches", (string)null);
                 });
 
             modelBuilder.Entity("NetMacoratti.Models.CarrinhoCompraItem", b =>

@@ -14,7 +14,7 @@ namespace NetMacoratti.Repository
             _dbContext = dbContext;
         }
 
-        public IEnumerable<Lanche> Lanches => _dbContext.Lanches;
+        public IEnumerable<Lanche> Lanches => _dbContext.Lanches.Include(c => c.Categoria);
 
         public IEnumerable<Lanche> LanchePreferido => _dbContext.Lanches.Where(l => l.IsLanchePreferido).Include(l1 => l1.Categoria);
 

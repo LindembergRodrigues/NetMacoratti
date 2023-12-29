@@ -53,4 +53,9 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
+app.MapControllerRoute(
+    name: "admin",
+    pattern: "Lanche/{Action}/{categoria?}",
+    defaults: new { controller = "Lanche", Action="List" });
+
 app.Run();
